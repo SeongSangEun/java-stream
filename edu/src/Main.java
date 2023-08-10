@@ -7,6 +7,9 @@ public class Main {
     public static void main(String[] args) {
 
         FilterSection filterSection = new FilterSection();
+        filterSection.orderFilter();
+        filterSection.userFilter();
+
         filterSection.positiveNumberFilter();
 
         System.out.println("------------------------------");
