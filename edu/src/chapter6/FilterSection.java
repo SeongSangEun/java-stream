@@ -1,5 +1,6 @@
 package chapter6;
 
+import chapter6.domain.AutoCreateDomain;
 import chapter6.domain.Order;
 import chapter6.domain.User;
 
@@ -15,23 +16,9 @@ import static chapter6.domain.Order.OrderStatus.*;
 public class FilterSection {
 
     public void userFilter() {
-        User user1 = new User()
-                .setId(101)
-                .setName("Alice")
-                .setVerified(true)
-                .setEmailAddress("alice@test.co.kr");
-        User user2 = new User()
-                .setId(102)
-                .setName("Bob")
-                .setVerified(false)
-                .setEmailAddress("bob@test.co.kr");
-        User user3 = new User()
-                .setId(103)
-                .setName("Charlie")
-                .setVerified(false)
-                .setEmailAddress("cahrlie@test.co.kr");
+        AutoCreateDomain autoCreateDomain = new AutoCreateDomain();
 
-        List<User> userList = Arrays.asList(user1, user2, user3);
+        List<User> userList = autoCreateDomain.createUserList();
 
         List<User> verifiedUsers = userList.stream().filter(User::isVerified).collect(Collectors.toList());
         List<User> unVerifiedUsers = userList.stream().filter(user -> !user.isVerified()).collect(Collectors.toList());
@@ -39,24 +26,9 @@ public class FilterSection {
         System.out.println("unVerifiedUsers = " + unVerifiedUsers);
     }
     public void orderFilter() {
+        AutoCreateDomain autoCreateDomain = new AutoCreateDomain();
 
-        Order order1 = new Order()
-                .setId(101)
-                .setStatus(CREATED);
-        Order order2 = new Order()
-                .setId(102)
-                .setStatus(ERROR);
-        Order order3 = new Order()
-                .setId(103)
-                .setStatus(IN_PROGRESS);
-        Order order4 = new Order()
-                .setId(104)
-                .setStatus(ERROR);
-        Order order5 = new Order()
-                .setId(105)
-                .setStatus(PROCESSED);
-
-        List<Order> orderList = Arrays.asList(order1, order2, order3, order4, order5);
+        List<Order> orderList = autoCreateDomain.createOrderList();
 
         List<Order> errorList = orderList.stream().filter(order -> ERROR.equals(order.getStatus())).collect(Collectors.toList());
         System.out.println("errorList = " + errorList);
