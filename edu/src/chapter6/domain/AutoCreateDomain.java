@@ -11,17 +11,17 @@ public class AutoCreateDomain {
     public List<User> createUserList() {
         User user1 = new User()
                 .setId(101)
-                .setName("Alice")
+                .setName("Paul")
                 .setVerified(true)
                 .setEmailAddress("alice@test.co.kr");
         User user2 = new User()
                 .setId(102)
-                .setName("Bob")
+                .setName("David")
                 .setVerified(false)
                 .setEmailAddress("bob@test.co.kr");
         User user3 = new User()
                 .setId(103)
-                .setName("Charlie")
+                .setName("John")
                 .setVerified(false)
                 .setEmailAddress("cahrlie@test.co.kr");
 
