@@ -9,6 +9,10 @@ import java.util.stream.Stream;
 
 public class StreamSection {
 
+
+
+
+
     public void StreamToCollection() {
         Stream<String> nameStream = Stream.of("sangeun", "naye", "jun");
         List<String> nameList = nameStream.collect(Collectors.toList());

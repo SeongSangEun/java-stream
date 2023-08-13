@@ -1,5 +1,6 @@
 package chapter6.domain;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,22 +32,27 @@ public class AutoCreateDomain {
         Order order1 = new Order()
                 .setId(101)
                 .setStatus(CREATED)
+                .setCreatedAt(LocalDateTime.now().minusHours(4))
                 .setCreatedByUserId(101);
         Order order2 = new Order()
                 .setId(102)
                 .setStatus(ERROR)
+                .setCreatedAt(LocalDateTime.now().minusHours(1))
                 .setCreatedByUserId(103);
         Order order3 = new Order()
                 .setId(103)
                 .setStatus(IN_PROGRESS)
+                .setCreatedAt(LocalDateTime.now().minusHours(36))
                 .setCreatedByUserId(102);
         Order order4 = new Order()
                 .setId(104)
                 .setStatus(ERROR)
+                .setCreatedAt(LocalDateTime.now().minusHours(40))
                 .setCreatedByUserId(104);
         Order order5 = new Order()
                 .setId(105)
                 .setStatus(PROCESSED)
+                .setCreatedAt(LocalDateTime.now().minusHours(10))
                 .setCreatedByUserId(101);
 
         return Arrays.asList(order1, order2, order3, order4, order5);
