@@ -1,5 +1,6 @@
 package chapter6.domain;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -56,5 +57,42 @@ public class AutoCreateDomain {
                 .setCreatedByUserId(101);
 
         return Arrays.asList(order1, order2, order3, order4, order5);
+    }
+
+    public List<Order> createOrderLineList() {
+        Order order1 = new Order()
+                .setId(1001)
+                .setOrderLines(Arrays.asList(
+                        new OrderLine()
+                                .setId(10001)
+                                .setType(OrderLine.OrderLineType.PURCHASE)
+                                .setAmount(BigDecimal.valueOf(5000)),
+                        new OrderLine()
+                                .setId(10002)
+                                .setType(OrderLine.OrderLineType.PURCHASE)
+                                .setAmount(BigDecimal.valueOf(4000))
+                ));
+        Order order2 = new Order()
+                .setId(1002)
+                .setOrderLines(Arrays.asList(
+                        new OrderLine()
+                                .setId(10003)
+                                .setType(OrderLine.OrderLineType.PURCHASE)
+                                .setAmount(BigDecimal.valueOf(2000)),
+                        new OrderLine()
+                                .setId(10004)
+                                .setType(OrderLine.OrderLineType.DISCOUNT)
+                                .setAmount(BigDecimal.valueOf(-1000))
+                ));
+        Order order3 = new Order()
+                .setId(1003)
+                .setOrderLines(Arrays.asList(
+                        new OrderLine()
+                                .setId(10005)
+                                .setType(OrderLine.OrderLineType.PURCHASE)
+                                .setAmount(BigDecimal.valueOf(2000))
+                ));
+
+        return Arrays.asList(order1, order2, order3);
     }
 }
