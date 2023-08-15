@@ -1,6 +1,7 @@
 package chapter6.domain;
 
 import java.util.List;
+import java.util.Optional;
 
 public class User {
 
@@ -32,6 +33,10 @@ public class User {
 
     public String getEmailAddress() {
         return emailAddress;
+    }
+
+    public Optional<String> getOptionalEmailAddress() {
+        return Optional.ofNullable(emailAddress);
     }
 
     public User setEmailAddress(String emailAddress) {
