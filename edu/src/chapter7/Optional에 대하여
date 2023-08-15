@@ -1,0 +1,13 @@
+Optional : 있을수도 있고 없을 수도 있다.
+
+Optional 만드는법
+.of()         : Null이 아닌 오브젝트를 이용하여 만들때
+.empty()        : 빈 Optional을 만들 때
+.ofNullable()   : Null인지 아닌지 알지 못하는 오브젝트로 Optional을 만들때
+
+안에 있는 값을 확인하고 꺼내는 법
+.isPresent() : 안의 오브젝트가 null인지 아닌지 체크
+.get() : Optional 안의 값을 추출, 만약 이때 Null이라면 에러
+.else - Optional 이 null이 아니라면 안의 값을 null이라면 other로 공급된 값을 리턴
+.orElseGet - Optional 이 null이라면 Optional 안의 값을, null이라면 supplier로 공급되는 값을 리턴
+.orElseThrow - Optional 이 null이 아니라면 Optional 안의 값을, null이라면 expectionSupplier로 공급되는 exception을 던짐
