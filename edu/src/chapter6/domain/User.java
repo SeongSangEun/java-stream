@@ -1,5 +1,6 @@
 package chapter6.domain;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,7 @@ public class User {
     private String name;
     private String emailAddress;
     private boolean isVerified;
+    private LocalDateTime createdAt;
     private List<Integer> friendUserIds;
 
     //setter Return 타입이 객체인 이유 : Stream chaining 을 하기 위함!
@@ -61,6 +63,15 @@ public class User {
 
     public User setFriendUserIds(List<Integer> friendUserIds) {
         this.friendUserIds = friendUserIds;
+        return this;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public User setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
         return this;
     }
 
