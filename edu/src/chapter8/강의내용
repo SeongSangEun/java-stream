@@ -8,4 +8,8 @@
 
 .findFirst() - Stream 안의 첫번째 데이터를 반환. 스트림이 비어있다면 비어있는 Optional 을 반환
 .findAny() - Stream 안의 안의 아무 데이터나 리턴. 순서가 중요하지 앟고 Parallel Stream을 하용할 때 최적화를 할 수 있다.
-             마찬가지로 Stream이 비어있다면 비어있는 Optional을 반환
+             마찬가지로 Stream이 비어있다면 비어있는 Optional을 반환.
+
+.Reduce - 주어진 함수를 반복 적용해 Stream 안의 데이터를 하나의 값으로 합치는 작업
+        - Max/Min/Count도 사실 reduce의 일종
+

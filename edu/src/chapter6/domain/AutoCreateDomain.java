@@ -15,31 +15,36 @@ public class AutoCreateDomain {
                 .setName("Ajul")
                 .setVerified(true)
                 .setCreatedAt(LocalDateTime.now().minusHours(48))
-                .setEmailAddress("alice@test.co.kr");
+                .setEmailAddress("alice@test.co.kr")
+                .setFriendUserIds(Arrays.asList(201, 202, 203, 204));
         User user2 = new User()
                 .setId(102)
                 .setName("David")
                 .setVerified(false)
                 .setCreatedAt(LocalDateTime.now().minusHours(10))
-                .setEmailAddress("bob@test.co.kr");
+                .setEmailAddress("bob@test.co.kr")
+                .setFriendUserIds(Arrays.asList(204, 205, 206));
         User user3 = new User()
                 .setId(103)
                 .setName("John")
                 .setVerified(false)
                 .setCreatedAt(LocalDateTime.now().minusHours(1))
-                .setEmailAddress("cahrlie@test.co.kr");
+                .setEmailAddress("cahrlie@test.co.kr")
+                .setFriendUserIds(Arrays.asList(204, 205, 207));
         User user4 = new User()
                 .setId(104)
                 .setName("Sang")
                 .setVerified(false)
                 .setCreatedAt(LocalDateTime.now().minusHours(15))
-                .setEmailAddress("bob@test.co.kr");
+                .setEmailAddress("bob@test.co.kr")
+                .setFriendUserIds(Arrays.asList(201, 202, 203));
         User user5 = new User()
                 .setId(105)
                 .setName("Eun")
                 .setVerified(false)
                 .setCreatedAt(LocalDateTime.now().minusHours(36))
-                .setEmailAddress("cahrlie@test.co.kr");
+                .setEmailAddress("cahrlie@test.co.kr")
+                .setFriendUserIds(Arrays.asList(201));
 
         return Arrays.asList(user1, user2, user3, user4, user5);
     }
