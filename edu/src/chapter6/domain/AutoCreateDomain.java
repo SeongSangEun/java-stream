@@ -36,14 +36,14 @@ public class AutoCreateDomain {
                 .setName("Sang")
                 .setVerified(false)
                 .setCreatedAt(LocalDateTime.now().minusHours(15))
-                .setEmailAddress("bob@test.co.kr")
+                .setEmailAddress("sang@test.co.kr")
                 .setFriendUserIds(Arrays.asList(201, 202, 203));
         User user5 = new User()
                 .setId(105)
                 .setName("Eun")
                 .setVerified(false)
                 .setCreatedAt(LocalDateTime.now().minusHours(36))
-                .setEmailAddress("cahrlie@test.co.kr")
+                .setEmailAddress("eun@test.co.kr")
                 .setFriendUserIds(Arrays.asList(201));
 
         return Arrays.asList(user1, user2, user3, user4, user5);

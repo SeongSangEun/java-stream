@@ -14,3 +14,10 @@
         - Max/Min/Count도 사실 reduce의 일종
 
 toMap( keyMapper, valueMapper) - 데이터를 map의 키로 변환하는 Function, 데이터를 value로 변환하는 Fuction
+
+Sequential VS Parallel
+- 여러개의 스레드를 이용하여 Stream 의 처리 과정을 병렬화
+- 중간 과정은 병렬 처리 되지만 순서가 있는 Stream의 경우 종결처리 했을때의 결과물이 기존의 순차적 처리와 일치하도록 종결처리 과정에서 조정된다.
+  즉, List로 collect한다면 순서가 항상 올바르게 나온다는 것.
+- 장점 : 굉장히 간단하게 병렬처리를 사용하게되며 속도가 비약적으로 빠르게 된다.
+- 단점 : 항상 속도가 빠른것은 아니다. / 공통으로 사용하는 리소스가 있을 경우 잘못된 결과가 나오거나 아예 오류가 날 수 있다. (DeadLock) / 이를 막기 위해 mutex, semaphore 등 병렬 처리 기술을 이용하면 순차처리보다 느려질 수 있다.
