@@ -1,11 +1,11 @@
 import chapter8.*;
+import chapter9.ScopeClosureCurry;
 
 public class Main {
     public static void main(String[] args) {
 
-        ParallelSection parallelSection =new ParallelSection();
-        parallelSection.sendEmailForEach();
-        parallelSection.sendEmailParallel();
+        ScopeClosureCurry scopeClosureCurry = new ScopeClosureCurry();
+        scopeClosureCurry.runMethod();
     }
 
 }
